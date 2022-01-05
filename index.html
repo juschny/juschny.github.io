@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.CSS">
+   
+    <style>
+        body {
+          background-image: url("fondomundo.jpg");
+          background-size:cover;
+          background-position-y: center;
+          
+         
+          
+        }
+
+        
+      </style>
+    <script src="javascriptareas.js" type="text/javascript" defer></script>
+    <script>
+        let user = prompt("hola! como te llamas?");
+        alert(user + " te voy a ayudar a hacerte acordar que tienes que hacer hoy.");
+       
+        
+        
+    </script>
+    <script>
+        let sonidoplaneacion = new Audio();
+        sonidoplaneacion.src = "sonidoplaneacion.mp3";
+        let año = new Audio();
+        año.src = "año.mp3";
+        let musicainicio = new Audio();
+        musicainicio.src = "musicainicio.mp3";
+        let fantastico = new Audio();
+        fantastico.src = "fantastico.mp3";
+    </script>
+  
+  
+</head>
+
+<body onkeypress="musicainicio.play()">
+    
+    <div class="list roundBorder">
+        <div class="date">
+            <div class="dateRight">
+                <div id="dateNumber"></div>
+                <div>
+                    <div id="dateMonth"></div>
+                    <div id="dateYear"></div>
+                </div>
+            </div>
+            <div id="dateText"></div>
+        </div>
+        <div class="frase para animar">
+            
+            <p><b>Buen día! que haces hoy contame.</b></p>
+            <br>
+            <p>"No renegar, que sea metal!</p>
+        </div>
+        <form onsubmit="addNewTask(event)" >
+            <input type="text" name="taskText" autocomplete="off" placeholder="Agregate lo que harás hoy" class="roundBorder">
+            <button type="submit" class="addTaskButton" onmousedown="sonidoplaneacion.play()" onmouseleave="año.play()">+</button>
+            <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()" onmousedown="fantastico.play()">Ordenar</button>
+            
+        </form>
+        <div id="tasksContainer"></div>
+        
+    </div>
+    
+</body>
+   
+</html>
+      
+
+
